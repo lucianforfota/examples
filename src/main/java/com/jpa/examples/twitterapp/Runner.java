@@ -12,18 +12,25 @@ public class Runner implements CommandLineRunner {
 
     private UserService userService;
 
+
+    private TweetService tweetService;
+
     @Autowired
-    public Runner(UserService userService) {
+    public Runner(UserService userService, TweetService tweetService) {
         this.userService = userService;
+        this.tweetService=tweetService;
     }
 
     @Override
     public void run(String... args) throws Exception {
         User user = new User("Costel");
-        userService.addUser(user);
+        User savedUser = userService.addUser(user);
         Tweet tweet = new Tweet("iara ninge");
-        userService.addTweetToUser2(tweet,1L);
-        userService.deleteAllTweetsFromUser(1L);
+        Tweet savedTweet  = userService.addTweetToUser(tweet, savedUser.getId());
+        System.out.println(tweetService.findAllTweetsByUserId(savedUser.getId()));
+        //userService.deleteAllTweetsFromUser(1L);
+        tweetService.deleteTweet(savedTweet.getId());
+        System.out.println(tweetService.findAllTweetsByUserId(savedUser.getId()));
     }
 }
 
