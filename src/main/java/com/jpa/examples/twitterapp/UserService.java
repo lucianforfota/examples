@@ -38,6 +38,8 @@ public class UserService {
     }
 
     //pentru a putea folosi aceasta metoda, in clasa User am folosit pt. atributul tweets "cascade = CascadeType.ALL"
+    //prin @Transactional se creaza o legatura "ca o teava" intre baza de date si java  astfel incat sa nu se creeze fenomenul de "lazy"
+    //fara  @Transactional  in variabila user de ex. se va baga doar de la user doar id si name, fara tweets
     @Transactional
     public void addTweetToUser2(Tweet tweet, Long userId) throws Exception{
         User user = userRepository.findById(userId).orElseThrow(()->new Exception("user not found"));
