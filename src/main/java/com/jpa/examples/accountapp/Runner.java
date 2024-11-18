@@ -1,13 +1,8 @@
 package com.jpa.examples.accountapp;
 
-import com.jpa.examples.Order;
-import com.jpa.examples.OrderRepository;
-import com.jpa.examples.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 
 @Component
 public class Runner implements CommandLineRunner {

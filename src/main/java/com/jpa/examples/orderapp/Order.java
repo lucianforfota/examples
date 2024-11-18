@@ -1,4 +1,4 @@
-package com.jpa.examples;
+package com.jpa.examples.orderapp;
 
 import jakarta.persistence.*;
 

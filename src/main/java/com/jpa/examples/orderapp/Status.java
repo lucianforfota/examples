@@ -1,4 +1,4 @@
-package com.jpa.examples;
+package com.jpa.examples.orderapp;
 
 public enum Status{
     SHIPPED,

@@ -1,11 +1,10 @@
-package com.jpa.examples;
+package com.jpa.examples.orderapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Component
 public class Runner implements CommandLineRunner {
@@ -19,7 +18,7 @@ public class Runner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Order order = new Order("lactate", LocalDate.of(2024,10,30),Status.PENDING,"progress");
+        /*Order order = new Order("lactate", LocalDate.of(2024,10,30),Status.PENDING,"progress");
         Order order2 = new Order("lactate", LocalDate.of(2024,10,30),Status.PENDING,"progress");
         orderRepository.save(order);
         orderRepository.save(order2);
@@ -28,7 +27,7 @@ public class Runner implements CommandLineRunner {
         order2.setOrderStatus(Status.SHIPPED);
         orderRepository.save(order2);
         orderRepository.delete(order2);
-        orderRepository.findAllByOrderStatus(Status.PENDING);
+        orderRepository.findAllByOrderStatus(Status.PENDING);*/
 
 
 
